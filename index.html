@@ -1440,10 +1440,9 @@
     }
     
     .cert-embed-new {
-      width: 200%;
-      height: 200%;
-      transform: scale(0.5);
-      transform-origin: 0 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       border: none;
       pointer-events: none;
     }
@@ -2394,9 +2393,9 @@
       </div>
       <div class="cert-grid-new">
         <!-- Card 1 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/J.P. Morgan Software Engineering Completion Certificate.pdf#toolbar=0')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/J.P. Morgan Software Engineering Completion Certificate_page-0001.jpg')">
           <div class="cert-preview-new">
-            <iframe src="Public/Certificates/J.P. Morgan Software Engineering Completion Certificate.pdf#toolbar=0" class="cert-embed-new"></iframe>
+            <img src="Public/Certificates/J.P. Morgan Software Engineering Completion Certificate_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2410,9 +2409,9 @@
         </div>
         
         <!-- Card 2 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Deloite Cyber Simulation.pdf#toolbar=0')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Deloite Cyber Simulation_page-0001.jpg')">
           <div class="cert-preview-new">
-            <iframe src="Public/Certificates/Deloite Cyber Simulation.pdf#toolbar=0" class="cert-embed-new"></iframe>
+            <img src="Public/Certificates/Deloite Cyber Simulation_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2426,9 +2425,9 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Jatin Pal Cognifyz Internship Certificate.pdf#toolbar=0')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Jatin Pal Cognifyz Internship Certificate_page-0001.jpg')">
           <div class="cert-preview-new">
-            <iframe src="Public/Certificates/Jatin Pal Cognifyz Internship Certificate.pdf#toolbar=0" class="cert-embed-new"></iframe>
+            <img src="Public/Certificates/Jatin Pal Cognifyz Internship Certificate_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2450,9 +2449,9 @@
       </div>
       <div class="cert-grid-new two-cols">
         <!-- Card 4 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Hack_Make_2026_Certificate.pdf#toolbar=0')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Hack_Make_2026_Certificate_page-0001.jpg')">
           <div class="cert-preview-new large">
-            <iframe src="Public/Certificates/Hack_Make_2026_Certificate.pdf#toolbar=0" class="cert-embed-new"></iframe>
+            <img src="Public/Certificates/Hack_Make_2026_Certificate_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2465,9 +2464,9 @@
           </div>
         </div>
         <!-- Card 5 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/CODESPIRE.pdf#toolbar=0')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/CODESPIRE_page-0001.jpg')">
           <div class="cert-preview-new large">
-            <iframe src="Public/Certificates/CODESPIRE.pdf#toolbar=0" class="cert-embed-new"></iframe>
+            <img src="Public/Certificates/CODESPIRE_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2489,9 +2488,9 @@
       </div>
       <div class="cert-grid-new two-cols">
         <!-- Card 6 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Fundamentals of Object Oriented Programming.pdf#toolbar=0')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Fundamentals of Object Oriented Programming_page-0001.jpg')">
           <div class="cert-preview-new large">
-            <iframe src="Public/Certificates/Fundamentals of Object Oriented Programming.pdf#toolbar=0" class="cert-embed-new"></iframe>
+            <img src="Public/Certificates/Fundamentals of Object Oriented Programming_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2504,9 +2503,9 @@
           </div>
         </div>
         <!-- Card 7 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/The Joy of Computing using Python.pdf#toolbar=0')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/The Joy of Computing using Python_page-0001.jpg')">
           <div class="cert-preview-new large">
-            <iframe src="Public/Certificates/The Joy of Computing using Python.pdf#toolbar=0" class="cert-embed-new"></iframe>
+            <img src="Public/Certificates/The Joy of Computing using Python_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2886,7 +2885,7 @@
   <!-- Certificate Modal -->
   <div id="cert-modal">
     <button class="modal-close-btn" onclick="closeCertModal()" aria-label="Close modal">×</button>
-    <iframe id="cert-modal-iframe" src="" title="Certificate Viewer"></iframe>
+    <img id="cert-modal-iframe" src="" alt="Certificate Viewer" style="object-fit: contain; width: 100%; height: 100%;">
   </div>
 
   <script>
