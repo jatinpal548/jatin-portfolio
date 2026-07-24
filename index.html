@@ -5,13 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jatin Pal — Cyber Security Engineer</title>
-  <link rel="icon" type="image/png" href="Public/Logo/JP_W.png" />
+  <link rel="icon" type="image/webp" href="Public/Logo/JP_W.webp" />
   <meta name="description"
     content="Jatin Pal — Cyber Security Engineer & Secure Software Developer. Penetration testing, secure development, cloud security." />
+  <!-- Non-render-blocking Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <!-- Preload critical above-the-fold images -->
+  <link rel="preload" as="image" href="Public/Logo/JP.webp" />
+  <link rel="preload" as="image" href="Public/Logo/Photo.webp" />
+  <link rel="preload" as="image" href="Public/Logo/java.svg" />
+  <link rel="preload" as="image" href="Public/Logo/Anthropic.webp" />
+  <link rel="preload" as="image" href="Public/Logo/terraformio-icon.svg" />
+  <link rel="preload" as="image" href="Public/Logo/I.webp" />
+  <link rel="preload" as="image" href="Public/Logo/nextjs-light.svg" />
+  <link rel="preload" as="image" href="Public/Logo/python.svg" />
+  <link rel="preload" as="image" href="Public/Logo/Antigravity.webp" />
+  <link rel="preload" as="image" href="Public/Logo/Linux.webp" />
 
   <style>
     /* ═══════════════════════════════════════════════════
@@ -458,7 +470,7 @@
       width: 100%;
       max-width: 1200px;
       padding: 0 40px;
-      margin-top: -60px;
+      margin-top: -20px;
     }
 
     /* ─── LEFT: greeting + name + bio ─── */
@@ -780,24 +792,22 @@
     }
 
     .photo-badge {
-      position: absolute;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
       background: var(--badge-bg);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
       border-radius: 100px;
-      padding: 8px 20px 8px 16px;
-      font-size: 13px;
+      padding: 6px 14px 6px 10px;
+      font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.2px;
       color: var(--fg);
       white-space: nowrap;
       box-shadow: var(--badge-shadow);
-      display: flex;
-      align-items: center;
-      gap: 10px;
       transition: background 0.5s var(--ease), border-color 0.5s var(--ease), box-shadow 0.5s var(--ease);
     }
 
@@ -1772,7 +1782,7 @@
         flex-direction: column;
         align-items: center;
         padding-top: 40px;
-        margin-top: -40px;
+        margin-top: -10px;
         gap: 40px;
       }
 
@@ -1789,16 +1799,27 @@
         justify-content: center;
       }
 
+      #hero-right {
+        width: 100%;
+        max-height: 0;
+        margin-top: -40px; /* offsets the gap to keep hero-left centered */
+        transition:
+          max-height 1.2s var(--ease),
+          margin-top 1.2s var(--ease),
+          opacity 1s var(--ease) 0.1s,
+          transform 1.2s var(--ease) 0.1s;
+      }
       #hero-right.visible {
         width: 100%;
         max-width: 260px;
+        max-height: 1000px;
         margin-left: 0;
+        margin-top: 0;
       }
       #photo-card {
         width: 100%;
         max-width: 260px;
         height: auto;
-        padding-bottom: 60px;
       }
       #photo-avatar {
         padding: 16px;
@@ -1925,6 +1946,15 @@
       .card-grid, .project-grid, .cert-grid {
         grid-template-columns: 1fr;
       }
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .skill-chip {
+        padding: 12px 14px;
+        font-size: 13px;
+        gap: 8px;
+      }
       .timeline-item {
         margin-bottom: 24px;
       }
@@ -2019,7 +2049,7 @@
         <a href="#skills" class="nav-link" data-section="skills">Skills</a>
       </div>
       <a href="#home" id="nav-jp" aria-label="Scroll to top">
-        <img src="Public/Logo/JP.png" id="nav-logo-img" alt="JP" />
+        <img src="Public/Logo/JP.webp" id="nav-logo-img" alt="JP" width="64" height="64" />
       </a>
       <div class="nav-group nav-right-group">
         <a href="#projects" class="nav-link" data-section="projects">Projects</a>
@@ -2065,6 +2095,7 @@
 
 
   <!-- ═══════════ HOME / HERO ═══════════ -->
+  <main id="main-content">
   <section id="home" aria-label="Hero">
     <div class="hero-light"></div>
     <div class="hero-text-glow"></div>
@@ -2076,14 +2107,14 @@
         <div id="greeting">Hello, I'm</div>
         <div id="logo-row" role="img" aria-label="Jatin Pal">
           <div class="cell" data-letter="J" data-logo="Public/Logo/java.svg" id="cell-0"></div>
-          <div class="cell" data-letter="A" data-logo="Public/Logo/Anthropic.png" id="cell-1"></div>
+          <div class="cell" data-letter="A" data-logo="Public/Logo/Anthropic.webp" id="cell-1"></div>
           <div class="cell" data-letter="T" data-logo="Public/Logo/terraformio-icon.svg" id="cell-2"></div>
-          <div class="cell" data-letter="I" data-logo="Public/Logo/I.png" id="cell-3"></div>
+          <div class="cell" data-letter="I" data-logo="Public/Logo/I.webp" id="cell-3"></div>
           <div class="cell" data-letter="N" data-logo="Public/Logo/nextjs-light.svg" id="cell-4"></div>
           <div class="cell space-cell"></div>
           <div class="cell" data-letter="P" data-logo="Public/Logo/python.svg" id="cell-5"></div>
-          <div class="cell" data-letter="A" data-logo="Public/Logo/Antigravity.svg" id="cell-6"></div>
-          <div class="cell" data-letter="L" data-logo="Public/Logo/Linux.png" id="cell-7"></div>
+          <div class="cell" data-letter="A" data-logo="Public/Logo/Antigravity.webp" id="cell-6"></div>
+          <div class="cell" data-letter="L" data-logo="Public/Logo/Linux.webp" id="cell-7"></div>
         </div>
         <div id="subtitle">Cyber Security Engineer &amp; Secure Software Developer</div>
         <div id="tags" aria-label="Skills">
@@ -2101,15 +2132,15 @@
       <div id="hero-right" aria-hidden="true">
         <div id="photo-card">
           <div id="photo-avatar">
-            <img src="Public/Logo/Photo.png" alt="Jatin Pal" class="avatar-img" />
-            <div>
+            <img src="Public/Logo/Photo.webp" alt="Jatin Pal" class="avatar-img" width="240" height="240" fetchpriority="high" />
+            <div style="display:flex; flex-direction:column; align-items:center;">
               <div class="avatar-name">Jatin Pal</div>
               <div class="avatar-role">Cyber Security Engineer</div>
+              <div class="photo-badge">
+                <div class="badge-dot"></div>
+                Available for work
+              </div>
             </div>
-          </div>
-          <div class="photo-badge">
-            <div class="badge-dot"></div>
-            Available for work
           </div>
         </div>
         <div id="cta-row">
@@ -2211,21 +2242,21 @@
           </p>
         </div>
         <div class="cert-header-right">
-          <img src="Public/Graphics/tools.png" alt="Tools Graphic" />
+          <img src="Public/Graphics/Tools.webp" alt="Tools Graphic" width="400" height="300" loading="lazy" />
         </div>
       </div>
       <div class="skills-grid">
-        <div class="skill-chip"><img src="Public/Logo/python.svg" alt="Python" class="skill-logo" /> Python</div>
-        <div class="skill-chip"><img src="Public/Logo/java.svg" alt="Java" class="skill-logo" /> Java</div>
-        <div class="skill-chip"><img src="Public/Logo/Linux.png" alt="Linux" class="skill-logo" /> Linux</div>
+        <div class="skill-chip"><img src="Public/Logo/python.svg" alt="Python" class="skill-logo" width="22" height="22" /> Python</div>
+        <div class="skill-chip"><img src="Public/Logo/java.svg" alt="Java" class="skill-logo" width="22" height="22" /> Java</div>
+        <div class="skill-chip"><img src="Public/Logo/Linux.webp" alt="Linux" class="skill-logo" width="22" height="22" /> Linux</div>
         <div class="skill-chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="skill-logo" /> React</div>
         <div class="skill-chip"><img src="https://cdn.simpleicons.org/nextdotjs/ffffff" alt="Next.js" class="skill-logo" /> Next.js</div>
         <div class="skill-chip"><img src="https://cdn.simpleicons.org/burpsuite/FF6633" alt="Burp Suite" class="skill-logo" /> Burp Suite</div>
         <div class="skill-chip"><img src="https://cdn.simpleicons.org/wireshark/1679A7" alt="Wireshark" class="skill-logo" /> Wireshark</div>
         <div class="skill-chip"><img src="https://cdn.simpleicons.org/owasp/ffffff" alt="OWASP" class="skill-logo" /> OWASP</div>
-        <div class="skill-chip"><img src="https://raw.githubusercontent.com/nmap/nmap/master/docs/nmap-logo-64.png" alt="Nmap" class="skill-logo" /> Nmap</div>
+        <div class="skill-chip"><img src="Public/Logo/nmap.svg" alt="Nmap" class="skill-logo" width="22" height="22" /> Nmap</div>
         <div class="skill-chip"><img src="https://cdn.simpleicons.org/metasploit/005596" alt="Metasploit" class="skill-logo" /> Metasploit</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/amazonwebservices/ffffff" alt="AWS" class="skill-logo" /> AWS</div>
+        <div class="skill-chip"><img src="Public/Logo/aws.svg" alt="AWS" class="skill-logo" width="22" height="22" /> AWS</div>
         <div class="skill-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="skill-logo" /> Docker</div>
         <div class="skill-chip"><img src="Public/Logo/terraformio-icon.svg" alt="Terraform" class="skill-logo" /> Terraform</div>
         <div class="skill-chip"><img src="https://cdn.simpleicons.org/kalilinux/557C94" alt="Kali Linux" class="skill-logo" /> Kali Linux</div>
@@ -2246,7 +2277,7 @@
       <div class="project-grid">
         <div class="project-card">
           <div class="project-image">
-            <img src="Public/Projects/Cryptix.png" alt="Cryptix" loading="lazy" />
+            <img src="Public/Projects/Cryptix.webp" alt="Cryptix" loading="lazy" width="800" height="520" />
           </div>
           <div class="project-content">
             <div class="project-title">Cryptix — Symmetric File Encryption</div>
@@ -2277,7 +2308,7 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="Public/Projects/Demand Paging.png" alt="Demand Paging Simulator" loading="lazy" />
+            <img src="Public/Projects/Demand Paging.webp" alt="Demand Paging Simulator" loading="lazy" width="800" height="520" />
           </div>
           <div class="project-content">
             <div class="project-title">Demand Paging OS Simulator</div>
@@ -2308,7 +2339,7 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="Public/Projects/RJ Power Solutions.png" alt="RJ Power Solutions" loading="lazy" />
+            <img src="Public/Projects/RJ Power Solutions.webp" alt="RJ Power Solutions" loading="lazy" width="800" height="520" />
           </div>
           <div class="project-content">
             <div class="project-title">RJ Power Solutions</div>
@@ -2339,7 +2370,7 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="Public/Projects/SMB.png" alt="SMB Hungama Band" loading="lazy" />
+            <img src="Public/Projects/SMB.webp" alt="SMB Hungama Band" loading="lazy" width="800" height="520" />
           </div>
           <div class="project-content">
             <div class="project-title">SMB Hungama Band</div>
@@ -2387,7 +2418,7 @@
           </p>
         </div>
         <div class="cert-header-right">
-          <img src="Public/Graphics/Credentials.png" alt="Credentials Graphic" />
+          <img src="Public/Graphics/Credentials.webp" alt="Credentials Graphic" width="400" height="300" loading="lazy" />
         </div>
       </div>
 
@@ -2399,9 +2430,9 @@
       </div>
       <div class="cert-grid-new">
         <!-- Card 1 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/J.P. Morgan Software Engineering Completion Certificate_page-0001.jpg')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/J.P. Morgan Software Engineering Completion Certificate_page-0001.webp')">
           <div class="cert-preview-new">
-            <img src="Public/Certificates/J.P. Morgan Software Engineering Completion Certificate_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
+            <img src="Public/Certificates/J.P. Morgan Software Engineering Completion Certificate_page-0001.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="120" height="85">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2415,9 +2446,9 @@
         </div>
         
         <!-- Card 2 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Deloite Cyber Simulation_page-0001.jpg')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Deloite Cyber Simulation_page-0001.webp')">
           <div class="cert-preview-new">
-            <img src="Public/Certificates/Deloite Cyber Simulation_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
+            <img src="Public/Certificates/Deloite Cyber Simulation_page-0001.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="120" height="85">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2431,9 +2462,9 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Jatin Pal Cognifyz Internship Certificate_page-0001.jpg')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Jatin Pal Cognifyz Internship Certificate_page-0001.webp')">
           <div class="cert-preview-new">
-            <img src="Public/Certificates/Jatin Pal Cognifyz Internship Certificate_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
+            <img src="Public/Certificates/Jatin Pal Cognifyz Internship Certificate_page-0001.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="120" height="85">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2455,9 +2486,9 @@
       </div>
       <div class="cert-grid-new two-cols">
         <!-- Card 4 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Hack_Make_2026_Certificate_page-0001.jpg')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Hack_Make_2026_Certificate_page-0001.webp')">
           <div class="cert-preview-new large">
-            <img src="Public/Certificates/Hack_Make_2026_Certificate_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
+            <img src="Public/Certificates/Hack_Make_2026_Certificate_page-0001.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="160" height="110">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2470,9 +2501,9 @@
           </div>
         </div>
         <!-- Card 5 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/CODESPIRE_page-0001.jpg')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/CODESPIRE_page-0001.webp')">
           <div class="cert-preview-new large">
-            <img src="Public/Certificates/CODESPIRE_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
+            <img src="Public/Certificates/CODESPIRE_page-0001.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="160" height="110">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2494,9 +2525,9 @@
       </div>
       <div class="cert-grid-new two-cols">
         <!-- Card 6 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Fundamentals of Object Oriented Programming_page-0001.jpg')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/Fundamentals of Object Oriented Programming_page-0001.webp')">
           <div class="cert-preview-new large">
-            <img src="Public/Certificates/Fundamentals of Object Oriented Programming_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
+            <img src="Public/Certificates/Fundamentals of Object Oriented Programming_page-0001.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="160" height="110">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2509,9 +2540,9 @@
           </div>
         </div>
         <!-- Card 7 -->
-        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/The Joy of Computing using Python_page-0001.jpg')">
+        <div class="cert-card-new" onclick="openCertModal('Public/Certificates/The Joy of Computing using Python_page-0001.webp')">
           <div class="cert-preview-new large">
-            <img src="Public/Certificates/The Joy of Computing using Python_page-0001.jpg" class="cert-embed-new" alt="Certificate Preview">
+            <img src="Public/Certificates/The Joy of Computing using Python_page-0001.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="160" height="110">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
@@ -2537,8 +2568,8 @@
       <p class="section-body">Preview and download my latest resume.</p>
       
       <div style="margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 32px;">
-        <div class="resume-preview-card" onclick="openCertModal('Public/resume.png')" style="cursor: pointer; position: relative; width: 100%; max-width: 900px; height: auto; border-radius: 12px; overflow: hidden; background: #fff; transition: transform 0.3s ease; border: 1px solid var(--border);">
-          <img src="Public/resume.png" alt="Resume Preview" style="width: 100%; height: auto; display: block;" />
+        <div class="resume-preview-card" onclick="openCertModal('Public/resume.webp')" style="cursor: pointer; position: relative; width: 100%; max-width: 900px; height: auto; border-radius: 12px; overflow: hidden; background: #fff; transition: transform 0.3s ease; border: 1px solid var(--border);">
+          <img src="Public/resume.webp" alt="Resume Preview" style="width: 100%; height: auto; display: block;" loading="lazy" width="1400" height="1980" />
           <div class="resume-overlay" style="position: absolute; inset: 0; background: transparent; transition: background 0.3s ease; display: flex; align-items: center; justify-content: center;">
              <div class="view-resume-text" style="background: rgba(0,0,0,0.8); color: white; padding: 12px 24px; border-radius: 100px; font-weight: 500; opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(10px); display: flex; align-items: center; gap: 8px;">
                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> View Full Resume
@@ -2644,6 +2675,7 @@
   <hr class="section-divider" />
 
   <!-- ═══════════ FOOTER ═══════════ -->
+  </main>
   <footer>
     <span class="footer-name">Jatin Pal</span>
     <span class="footer-copy">© 2026 · Built with precision</span>
@@ -2671,11 +2703,11 @@
 
         localStorage.setItem('jp-theme', theme);
         var navLogo = document.getElementById('nav-logo-img');
-        if (navLogo) navLogo.src = theme === 'dark' ? 'Public/Logo/JP_W.png' : 'Public/Logo/JP.png';
+        if (navLogo) navLogo.src = theme === 'dark' ? 'Public/Logo/JP_W.webp' : 'Public/Logo/JP.webp';
 
         var anthropicCell = document.getElementById('cell-1');
         if (anthropicCell) {
-          var anthropicLogoSrc = theme === 'dark' ? 'Public/Logo/Anthropic_w.png' : 'Public/Logo/Anthropic.png';
+          var anthropicLogoSrc = theme === 'dark' ? 'Public/Logo/Anthropic_w.webp' : 'Public/Logo/Anthropic.webp';
           anthropicCell.dataset.logo = anthropicLogoSrc;
           var anthropicImg = anthropicCell.querySelector('.logo-img');
           if (anthropicImg) anthropicImg.src = anthropicLogoSrc;
@@ -2763,13 +2795,12 @@
       /* ──────────────────────────────────────────────
          HERO ANIMATION TIMING
       ────────────────────────────────────────────── */
-      var isMobile = window.innerWidth <= 768;
-      var INTRO_DELAY = isMobile ? 0 : 400;
-      var LOGO_STAGGER = isMobile ? 0 : 170;
-      var HOLD_LOGOS = isMobile ? 0 : 1100;
-      var MORPH_STAGGER = isMobile ? 0 : 130;
-      var MORPH_LIMBO = isMobile ? 0 : 280;
-      var AFTER_NAME = isMobile ? 0 : 650;
+      var INTRO_DELAY = 400;
+      var LOGO_STAGGER = 170;
+      var HOLD_LOGOS = 1100;
+      var MORPH_STAGGER = 130;
+      var MORPH_LIMBO = 280;
+      var AFTER_NAME = 650;
 
       setTimeout(function () {
         document.getElementById('greeting').classList.add('visible');
@@ -2804,10 +2835,10 @@
         document.getElementById('subtitle').classList.add('visible');
         setTimeout(function () {
           document.getElementById('tags').classList.add('visible');
-        }, isMobile ? 0 : 380);
-      }, isMobile ? 0 : lastMorphEnd + AFTER_NAME);
+        }, 380);
+      }, lastMorphEnd + AFTER_NAME);
 
-      var SHIFT_DELAY = isMobile ? 0 : lastMorphEnd + AFTER_NAME + 880;
+      var SHIFT_DELAY = lastMorphEnd + AFTER_NAME + 880;
 
       setTimeout(function () {
         var heroRight = document.getElementById('hero-right');
