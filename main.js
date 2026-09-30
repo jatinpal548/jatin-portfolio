@@ -2,7 +2,7 @@
    Jatin Pal — portfolio scripts
 ═══════════════════════════════════════════════════ */
 
-/* Mobile menu (called from inline onclick in index.html) */
+/* Mobile menu */
 function toggleMobileMenu(force) {
   var menu = document.getElementById('mobile-menu');
   var btn = document.getElementById('hamburger-btn');
@@ -106,6 +106,11 @@ function toggleMobileMenu(force) {
     });
   });
 
+  var hamburger = document.getElementById('hamburger-btn');
+  if (hamburger) hamburger.addEventListener('click', function () { toggleMobileMenu(); });
+  document.querySelectorAll('#mobile-menu .mobile-link').forEach(function (link) {
+    link.addEventListener('click', function () { toggleMobileMenu(false); });
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') toggleMobileMenu(false);
   });

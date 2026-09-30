@@ -32,15 +32,7 @@
   <link rel="apple-touch-icon" href="public/apple-touch-icon.png" />
 
   <!-- Apply saved theme before first paint (prevents light→dark flash) -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem('jp-theme');
-        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
+  <script src="theme-init.js"></script>
 
   <!-- Structured data for search engines -->
   <script type="application/ld+json">
@@ -61,17 +53,13 @@
   }
   </script>
 
-  <!-- Non-render-blocking Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <!-- Self-hosted Inter (no third-party font requests) -->
+  <link rel="preload" href="public/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
 
   <!-- Preload above-the-fold images (all tiny; logos are used by the name animation) -->
   <link rel="preload" as="image" href="public/logo/photo.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="public/logo/jp.webp" />
   <link rel="preload" as="image" href="public/logo/java.svg" />
-  <link rel="preload" as="image" href="public/logo/anthropic.webp" />
   <link rel="preload" as="image" href="public/logo/terraform.svg" />
   <link rel="preload" as="image" href="public/logo/i.webp" />
   <link rel="preload" as="image" href="public/logo/nextjs-light.svg" />
@@ -82,16 +70,13 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- Vercel Web Analytics -->
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
   <script defer src="/_vercel/insights/script.js"></script>
   <script src="main.js" defer></script>
 </head>
 
 <body>
   <!-- Reusable icons -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <svg class="sprite" width="0" height="0" aria-hidden="true">
     <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></symbol>
     <symbol id="i-external" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></g></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></g></symbol>
@@ -128,7 +113,7 @@
           <a href="#contact" class="nav-link" data-section="contact">Contact</a>
         </div>
 
-        <div id="nav-utils-mobile" class="mobile-only" style="display: none;">
+        <div id="nav-utils-mobile" class="mobile-only">
           <button class="theme-toggle" aria-label="Toggle light/dark theme"></button>
           <div class="nav-divider"></div>
           <a href="public/Jatin_Pal_Resume.pdf" download="Jatin_Pal_Resume.pdf" class="resume-btn" aria-label="Download resume PDF">
@@ -137,7 +122,7 @@
           </a>
         </div>
 
-        <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()">
+        <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -149,12 +134,12 @@
   </div>
 
   <div id="mobile-menu">
-    <a href="#about" class="mobile-link" onclick="toggleMobileMenu()">About</a>
-    <a href="#experience" class="mobile-link" onclick="toggleMobileMenu()">Experience</a>
-    <a href="#skills" class="mobile-link" onclick="toggleMobileMenu()">Skills</a>
-    <a href="#projects" class="mobile-link" onclick="toggleMobileMenu()">Projects</a>
-    <a href="#certifications" class="mobile-link" onclick="toggleMobileMenu()">Certifications</a>
-    <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#certifications" class="mobile-link">Certifications</a>
+    <a href="#contact" class="mobile-link">Contact</a>
   </div>
 
   <main id="main-content">
@@ -367,31 +352,31 @@
 
       <h3 class="skill-group-title">Security</h3>
       <div class="skills-grid">
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/burpsuite/FF6633" alt="" class="skill-logo" width="22" height="22" /> Burp Suite</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/wireshark/1679A7" alt="" class="skill-logo" width="22" height="22" /> Wireshark</div>
+        <div class="skill-chip"><img src="public/icons/burpsuite.svg" alt="" class="skill-logo" width="22" height="22" /> Burp Suite</div>
+        <div class="skill-chip"><img src="public/icons/wireshark.svg" alt="" class="skill-logo" width="22" height="22" /> Wireshark</div>
         <div class="skill-chip"><img src="public/logo/nmap.svg" alt="" class="skill-logo" width="22" height="22" /> Nmap</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/metasploit/005596" alt="" class="skill-logo" width="22" height="22" /> Metasploit</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/kalilinux/557C94" alt="" class="skill-logo" width="22" height="22" /> Kali Linux</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/owasp/ffffff" alt="" class="skill-logo invert-light" width="22" height="22" /> OWASP Top 10</div>
+        <div class="skill-chip"><img src="public/icons/metasploit.svg" alt="" class="skill-logo" width="22" height="22" /> Metasploit</div>
+        <div class="skill-chip"><img src="public/icons/kalilinux.svg" alt="" class="skill-logo" width="22" height="22" /> Kali Linux</div>
+        <div class="skill-chip"><img src="public/icons/owasp.svg" alt="" class="skill-logo mono" width="22" height="22" /> OWASP</div>
       </div>
 
       <h3 class="skill-group-title">Development</h3>
       <div class="skills-grid">
         <div class="skill-chip"><img src="public/logo/python.svg" alt="" class="skill-logo" width="22" height="22" /> Python</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="" class="skill-logo" width="22" height="22" /> C / C++</div>
+        <div class="skill-chip"><img src="public/icons/cplusplus.svg" alt="" class="skill-logo" width="22" height="22" /> C / C++</div>
         <div class="skill-chip"><img src="public/logo/java.svg" alt="" class="skill-logo" width="22" height="22" /> Java</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="" class="skill-logo" width="22" height="22" /> React</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/nextdotjs/ffffff" alt="" class="skill-logo invert-light" width="22" height="22" /> Next.js</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" class="skill-logo" width="22" height="22" /> PostgreSQL</div>
+        <div class="skill-chip"><img src="public/icons/react.svg" alt="" class="skill-logo" width="22" height="22" /> React</div>
+        <div class="skill-chip"><img src="public/icons/nextdotjs.svg" alt="" class="skill-logo mono" width="22" height="22" /> Next.js</div>
+        <div class="skill-chip"><img src="public/icons/postgresql.svg" alt="" class="skill-logo" width="22" height="22" /> PostgreSQL</div>
       </div>
 
       <h3 class="skill-group-title">Cloud &amp; Ops</h3>
       <div class="skills-grid">
         <div class="skill-chip"><img src="public/logo/linux.webp" alt="" class="skill-logo" width="22" height="22" /> Linux</div>
         <div class="skill-chip"><img src="public/logo/aws.svg" alt="" class="skill-logo" width="22" height="22" /> AWS</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="" class="skill-logo" width="22" height="22" /> Docker</div>
+        <div class="skill-chip"><img src="public/icons/docker.svg" alt="" class="skill-logo" width="22" height="22" /> Docker</div>
         <div class="skill-chip"><img src="public/logo/terraform.svg" alt="" class="skill-logo" width="22" height="22" /> Terraform</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/splunk/ffffff" alt="" class="skill-logo invert-light" width="22" height="22" /> Splunk</div>
+        <div class="skill-chip"><img src="public/icons/splunk.svg" alt="" class="skill-logo mono" width="22" height="22" /> Splunk</div>
       </div>
     </div>
   </section>
@@ -408,7 +393,7 @@
 
         <article class="project-card">
           <div class="project-image">
-            <img src="public/projects/cryptix.webp" alt="Cryptix dashboard with encrypt and decrypt panels" loading="lazy" width="800" height="520" />
+            <img src="public/projects/cryptix.webp" alt="Cryptix dashboard with encrypt and decrypt panels" loading="lazy" width="800" height="384" />
           </div>
           <div class="project-content">
             <span class="project-kind">Security tool</span>
@@ -428,7 +413,7 @@
 
         <article class="project-card">
           <div class="project-image">
-            <img src="public/projects/demand-paging.webp" alt="Demand Paging Visualizer landing page" loading="lazy" width="800" height="520" />
+            <img src="public/projects/demand-paging.webp" alt="Demand Paging Visualizer landing page" loading="lazy" width="800" height="384" />
           </div>
           <div class="project-content">
             <span class="project-kind">Systems</span>
@@ -448,7 +433,7 @@
 
         <article class="project-card">
           <div class="project-image">
-            <img src="public/projects/rj-power-solutions.webp" alt="RJ Power Solutions website hero" loading="lazy" width="800" height="520" />
+            <img src="public/projects/rj-power-solutions.webp" alt="RJ Power Solutions website hero" loading="lazy" width="800" height="384" />
           </div>
           <div class="project-content">
             <span class="project-kind">Client project</span>
@@ -468,7 +453,7 @@
 
         <article class="project-card">
           <div class="project-image">
-            <img src="public/projects/smb-hungama-band.webp" alt="SMB Hungama Band website hero" loading="lazy" width="800" height="520" />
+            <img src="public/projects/smb-hungama-band.webp" alt="SMB Hungama Band website hero" loading="lazy" width="800" height="384" />
           </div>
           <div class="project-content">
             <span class="project-kind">Client project</span>
