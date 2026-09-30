@@ -2,21 +2,74 @@
 <html lang="en" data-theme="light">
 
 <head>
-  <meta name="google-site-verification" content="2zLww29J8ElrtZwS1W6lv0k3P6UAtSq9HXE9gxAVf2o" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jatin Pal — Cyber Security Engineer</title>
-  <link rel="icon" type="image/webp" href="public/logo/jp-white.webp" />
+  <meta name="google-site-verification" content="2zLww29J8ElrtZwS1W6lv0k3P6UAtSq9HXE9gxAVf2o" />
+  <title>Jatin Pal — Cybersecurity Student &amp; Secure Software Developer</title>
   <meta name="description"
-    content="Jatin Pal — Cyber Security Engineer & Secure Software Developer. Penetration testing, secure development, cloud security." />
+    content="Jatin Pal — B.Tech Cyber Security student and Google Student Ambassador building secure web apps and security tools. Projects, experience, certifications and resume." />
+  <meta name="author" content="Jatin Pal" />
+  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://portfolio-jatinpal.vercel.app/" />
+
+  <!-- Social previews (LinkedIn, WhatsApp, X, Discord) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jatin Pal" />
+  <meta property="og:title" content="Jatin Pal — Cybersecurity Student & Secure Software Developer" />
+  <meta property="og:description" content="Secure web apps, security tooling and client projects. B.Tech Cyber Security, Google Student Ambassador." />
+  <meta property="og:url" content="https://portfolio-jatinpal.vercel.app/" />
+  <meta property="og:image" content="https://portfolio-jatinpal.vercel.app/public/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jatin Pal — Cybersecurity Student & Secure Software Developer" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jatin Pal — Cybersecurity Student & Secure Software Developer" />
+  <meta name="twitter:description" content="Secure web apps, security tooling and client projects." />
+  <meta name="twitter:image" content="https://portfolio-jatinpal.vercel.app/public/og-image.png" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32.png" />
+  <link rel="apple-touch-icon" href="public/apple-touch-icon.png" />
+
+  <!-- Apply saved theme before first paint (prevents light→dark flash) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('jp-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jatin Pal",
+    "url": "https://portfolio-jatinpal.vercel.app/",
+    "image": "https://portfolio-jatinpal.vercel.app/public/logo/photo.webp",
+    "jobTitle": "Cybersecurity Student & Secure Software Developer",
+    "email": "mailto:jatinpal142000@gmail.com",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Acropolis Institute of Technology and Research" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Indore", "addressRegion": "Madhya Pradesh", "addressCountry": "IN" },
+    "sameAs": [
+      "https://www.linkedin.com/in/jatinpal1425",
+      "https://github.com/jatinpal548"
+    ]
+  }
+  </script>
+
   <!-- Non-render-blocking Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
-  <!-- Preload critical above-the-fold images -->
+
+  <!-- Preload above-the-fold images (all tiny; logos are used by the name animation) -->
+  <link rel="preload" as="image" href="public/logo/photo.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="public/logo/jp.webp" />
-  <link rel="preload" as="image" href="public/logo/photo.webp" />
   <link rel="preload" as="image" href="public/logo/java.svg" />
   <link rel="preload" as="image" href="public/logo/anthropic.webp" />
   <link rel="preload" as="image" href="public/logo/terraform.svg" />
@@ -27,147 +80,142 @@
   <link rel="preload" as="image" href="public/logo/linux.webp" />
 
   <link rel="stylesheet" href="style.css" />
-  
+
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="main.js" defer></script>
 </head>
 
 <body>
+  <!-- Reusable icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></g></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></g></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></g></symbol>
+  </svg>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- ═══════════ NAVBAR — floating pill ═══════════ -->
   <div id="nav-container">
-    <!-- Desktop Utility controls: theme toggle + resume -->
     <div id="nav-utils-desktop" class="desktop-only">
       <button class="theme-toggle" aria-label="Toggle light/dark theme"></button>
       <a href="public/Jatin_Pal_Resume.pdf" download="Jatin_Pal_Resume.pdf" class="resume-btn" aria-label="Download resume PDF">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-          <polyline points="7 10 12 15 17 10" />
-          <line x1="12" y1="15" x2="12" y2="3" />
-        </svg>
+        <svg width="12" height="12"><use href="#i-download" /></svg>
         Resume
       </a>
     </div>
 
-    <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <div class="nav-group nav-left-group">
-        <a href="#home" class="nav-link active" data-section="home">Home</a>
-        <a href="#about" class="nav-link" data-section="about">About</a>
-        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-      </div>
-      <a href="#home" id="nav-jp" aria-label="Scroll to top">
-        <img src="public/logo/jp.webp" id="nav-logo-img" alt="JP" width="64" height="64" />
-      </a>
-      <div class="nav-group nav-right-group">
-        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-        <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
-        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-      </div>
-
-      <!-- Utility controls: theme toggle + resume -->
-      <div id="nav-utils-mobile" class="mobile-only" style="display: none;">
-        <button class="theme-toggle" aria-label="Toggle light/dark theme"></button>
-        <div class="nav-divider"></div>
-        <a href="public/Jatin_Pal_Resume.pdf" download="Jatin_Pal_Resume.pdf" class="resume-btn" aria-label="Download resume PDF">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-          Resume
+    <nav id="navbar" aria-label="Main navigation">
+      <div class="nav-inner">
+        <div class="nav-group nav-left-group">
+          <a href="#about" class="nav-link" data-section="about">About</a>
+          <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+          <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        </div>
+        <a href="#home" id="nav-jp" aria-label="Back to top">
+          <img src="public/logo/jp.webp" id="nav-logo-img" alt="JP" width="64" height="64" />
         </a>
-      </div>
+        <div class="nav-group nav-right-group">
+          <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+          <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
 
-      <button id="hamburger-btn" aria-label="Menu" onclick="toggleMobileMenu()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-  </nav>
+        <div id="nav-utils-mobile" class="mobile-only" style="display: none;">
+          <button class="theme-toggle" aria-label="Toggle light/dark theme"></button>
+          <div class="nav-divider"></div>
+          <a href="public/Jatin_Pal_Resume.pdf" download="Jatin_Pal_Resume.pdf" class="resume-btn" aria-label="Download resume PDF">
+            <svg width="12" height="12"><use href="#i-download" /></svg>
+            Resume
+          </a>
+        </div>
+
+        <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobile-menu">
-    <a href="#home" class="mobile-link" onclick="toggleMobileMenu()">Home</a>
     <a href="#about" class="mobile-link" onclick="toggleMobileMenu()">About</a>
+    <a href="#experience" class="mobile-link" onclick="toggleMobileMenu()">Experience</a>
     <a href="#skills" class="mobile-link" onclick="toggleMobileMenu()">Skills</a>
     <a href="#projects" class="mobile-link" onclick="toggleMobileMenu()">Projects</a>
     <a href="#certifications" class="mobile-link" onclick="toggleMobileMenu()">Certifications</a>
     <a href="#contact" class="mobile-link" onclick="toggleMobileMenu()">Contact</a>
   </div>
 
-
-  <!-- ═══════════ HOME / HERO ═══════════ -->
   <main id="main-content">
-  <section id="home" aria-label="Hero">
+  <!-- ═══════════ HERO ═══════════ -->
+  <section id="home" aria-label="Introduction">
     <div class="hero-light"></div>
     <div class="hero-text-glow"></div>
     <div class="hero-card-glow"></div>
 
     <div id="hero-content">
-      <!-- LEFT -->
       <div id="hero-left">
         <div id="greeting">Hello, I'm</div>
-        <div id="logo-row" role="img" aria-label="Jatin Pal">
-          <div class="cell" data-letter="J" data-logo="public/logo/java.svg" id="cell-0"></div>
-          <div class="cell" data-letter="A" data-logo="public/logo/anthropic.webp" id="cell-1"></div>
-          <div class="cell" data-letter="T" data-logo="public/logo/terraform.svg" id="cell-2"></div>
-          <div class="cell" data-letter="I" data-logo="public/logo/i.webp" id="cell-3"></div>
-          <div class="cell" data-letter="N" data-logo="public/logo/nextjs-light.svg" id="cell-4"></div>
+        <h1 class="visually-hidden">Jatin Pal</h1>
+        <div id="logo-row" aria-hidden="true">
+          <div class="cell" data-letter="J" data-logo="public/logo/java.svg"></div>
+          <div class="cell" data-letter="A" data-logo="public/logo/anthropic.webp" id="cell-anthropic"></div>
+          <div class="cell" data-letter="T" data-logo="public/logo/terraform.svg"></div>
+          <div class="cell" data-letter="I" data-logo="public/logo/i.webp"></div>
+          <div class="cell" data-letter="N" data-logo="public/logo/nextjs-light.svg"></div>
           <div class="cell space-cell"></div>
-          <div class="cell" data-letter="P" data-logo="public/logo/python.svg" id="cell-5"></div>
-          <div class="cell" data-letter="A" data-logo="public/logo/antigravity.webp" id="cell-6"></div>
-          <div class="cell" data-letter="L" data-logo="public/logo/linux.webp" id="cell-7"></div>
+          <div class="cell" data-letter="P" data-logo="public/logo/python.svg"></div>
+          <div class="cell" data-letter="A" data-logo="public/logo/antigravity.webp"></div>
+          <div class="cell" data-letter="L" data-logo="public/logo/linux.webp"></div>
         </div>
-        <div id="subtitle">Cyber Security Engineer &amp; Secure Software Developer</div>
-        <div id="tags" aria-label="Skills">
+        <p id="subtitle">Cybersecurity student &amp; secure software developer. I build web apps with security designed in — and tools that show how things break.</p>
+        <div id="tags" aria-label="Core skills">
           <span class="tag">Python</span>
-          <span class="tag">Java</span>
+          <span class="tag">C / C++</span>
           <span class="tag">Linux</span>
           <span class="tag">Burp Suite</span>
           <span class="tag">React</span>
           <span class="tag">OWASP</span>
           <span class="tag">Wireshark</span>
         </div>
+        <div id="cta-row">
+          <a href="#projects" class="cta-btn cta-primary">View work ↗</a>
+          <a href="#contact" class="cta-btn cta-secondary">Get in touch</a>
+        </div>
       </div>
 
-      <!-- RIGHT: Profile card -->
-      <div id="hero-right" aria-hidden="true">
+      <div id="hero-right">
         <div id="photo-card">
           <div id="photo-avatar">
-            <img src="public/logo/photo.webp" alt="Jatin Pal" class="avatar-img" width="240" height="240" fetchpriority="high" />
-            <div style="display:flex; flex-direction:column; align-items:center;">
-              <div class="avatar-name">Jatin Pal</div>
-              <div class="avatar-role">Cyber Security Engineer</div>
+            <img src="public/logo/photo.webp" alt="Portrait of Jatin Pal" class="avatar-img" width="240" height="240" fetchpriority="high" />
+            <div class="photo-meta">
+              <div class="avatar-role">B.Tech Cyber Security · Indore</div>
               <div class="photo-badge">
                 <div class="badge-dot"></div>
-                Available for work
+                Open to internships
               </div>
             </div>
           </div>
         </div>
-        <div id="cta-row">
-          <a href="#projects" class="cta-btn cta-primary">View Work ↗</a>
-          <a href="#contact" class="cta-btn cta-secondary">Contact</a>
-        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Scroll hint -->
-  <div id="scroll-hint" aria-hidden="true">
-    <span>Scroll</span>
-    <div class="arrow"></div>
-  </div>
+    <div id="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
 
   <hr class="section-divider" />
 
@@ -175,67 +223,128 @@
   <section id="about">
     <div class="section-wrap">
       <div class="about-layout">
-        <!-- LEFT COLUMN -->
         <div class="about-left">
-          <div class="section-label"><span class="label-dot"></span> ABOUT</div>
+          <div class="section-label"><span class="label-dot"></span> About</div>
           <h2 class="section-title">Security-first.<br />Always.</h2>
           <p class="section-body">
-            I'm a Cyber Security Engineer and Secure Software Developer with a passion for building
-            resilient systems and breaking insecure ones. My work spans penetration testing, secure
-            application development, threat modeling, and cloud security — always with a focus on
-            real-world impact.
+            I'm a Cyber Security undergrad at Acropolis Institute (AITR), Indore, and a former Google Student
+            Ambassador. I like building things properly — web apps with security designed in from day one — and
+            understanding how insecure ones fall apart. Right now I'm focused on web application security,
+            bug bounty, and AI-assisted security tooling.
           </p>
           <div class="card-grid">
             <div class="card">
               <div class="card-icon-wrap"><span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span></div>
-              <div class="card-title">Security Engineering</div>
-              <div class="card-text">Penetration testing, vulnerability research, and secure architecture design for production systems and critical infrastructure.</div>
+              <h3 class="card-title">Offensive Security</h3>
+              <p class="card-text">Web app testing with Burp Suite, recon with Nmap, traffic analysis with Wireshark — working through the OWASP Top 10 hands-on.</p>
             </div>
             <div class="card">
-              <div class="card-icon-wrap"><span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span></div>
-              <div class="card-title">Secure Development</div>
-              <div class="card-text">Full-stack development with security embedded from day one — threat modeling, OWASP compliance, and security code review.</div>
+              <div class="card-icon-wrap"><span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></span></div>
+              <h3 class="card-title">Secure Development</h3>
+              <p class="card-text">Full-stack builds in React and Next.js with input validation, safe defaults and client-side crypto — shipped for real clients.</p>
             </div>
-
           </div>
         </div>
 
-        <!-- RIGHT COLUMN -->
         <div class="about-right">
-          <div class="section-label" style="margin-top: 12px;">EDUCATION</div>
+          <div class="section-label">Education</div>
           <div class="timeline">
-            <!-- connecting line -->
             <div class="timeline-line"></div>
-            
             <div class="timeline-item">
               <div class="timeline-icon-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
               <div class="timeline-content card">
-                <div class="timeline-title">Bachelor of Technology (B.Tech) – Cyber Security</div>
-                <div class="timeline-org">Acropolis Institute of Technology and Research, Indore (RGPV Affiliated)</div>
-                <div class="timeline-status"><span class="status-dot"></span> Expected Graduation: 2028</div>
-                <div class="timeline-org" style="margin-top: 16px;">Currently pursuing a Bachelor's degree in Cyber Security with a strong interest in network security, ethical hacking, secure software development, and modern cybersecurity technologies.</div>
+                <h3 class="timeline-title">B.Tech – Cyber Security</h3>
+                <div class="timeline-org">Acropolis Institute of Technology and Research, Indore (RGPV)</div>
+                <div class="timeline-status"><span class="status-dot"></span> 2024 – 2028 (expected)</div>
+                <div class="timeline-org timeline-desc">Coursework and self-study across network security, ethical hacking, cryptography and secure software development.</div>
               </div>
             </div>
-
             <div class="timeline-item">
               <div class="timeline-icon-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8"/><path d="M10 21v-4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4"/><path d="M12 3l9 6-9-6-9 6"/></svg></div>
               <div class="timeline-content card">
-                <div class="timeline-title">Higher Secondary (Class XII)</div>
-                <div class="timeline-org">Little Wonders Convent School<br/>ISC Board</div>
-                <div class="timeline-status"><span class="status-dot"></span> Passed in 2024</div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-icon-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
-              <div class="timeline-content card">
-                <div class="timeline-title">Secondary School (Class X)</div>
-                <div class="timeline-org">Little Wonders Convent School<br/>ICSE Board</div>
-                <div class="timeline-status"><span class="status-dot"></span> Passed in 2022</div>
+                <h3 class="timeline-title">Class XII (ISC) &amp; Class X (ICSE)</h3>
+                <div class="timeline-org">Little Wonders Convent School</div>
+                <div class="timeline-status"><span class="status-dot"></span> 2022 · 2024</div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ═══════════ EXPERIENCE ═══════════ -->
+  <section id="experience">
+    <div class="section-wrap">
+      <div class="section-label"><span class="label-dot"></span> Experience</div>
+      <h2 class="section-title">Where I've<br />contributed.</h2>
+      <p class="section-body">Roles in developer communities, engineering internships and student organisations.</p>
+
+      <div class="exp-grid">
+        <article class="exp-card card">
+          <div class="exp-head">
+            <div>
+              <h3 class="exp-role">Google Student Ambassador</h3>
+              <div class="exp-org">Google · Remote</div>
+            </div>
+            <span class="exp-date">Aug 2025 – Jan 2026</span>
+          </div>
+          <ul class="exp-points">
+            <li>Organised workshops and events to grow the developer community on campus.</li>
+            <li>Introduced students to Google developer tools, programs and learning paths.</li>
+            <li>Acted as the link between Google and the student community to drive engagement.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card card">
+          <div class="exp-head">
+            <div>
+              <h3 class="exp-role">C/C++ Programming Intern</h3>
+              <div class="exp-org">Cognifyz Technologies · Remote</div>
+            </div>
+            <span class="exp-date">Oct – Nov 2025</span>
+          </div>
+          <ul class="exp-points">
+            <li>Completed hands-on C/C++ programming tasks and projects across the internship curriculum.</li>
+            <li>Wrote and optimised solutions with a focus on correctness and problem-solving.</li>
+          </ul>
+          <button type="button" class="exp-link" data-cert="public/certificates/cognifyz-internship.webp" data-cert-alt="Cognifyz internship completion certificate">
+            <svg width="14" height="14"><use href="#i-doc" /></svg> View certificate
+          </button>
+        </article>
+
+        <article class="exp-card card">
+          <div class="exp-head">
+            <div>
+              <h3 class="exp-role">Graphic Designer</h3>
+              <div class="exp-org">Computer Society of India – AITR Student Chapter</div>
+            </div>
+            <span class="exp-date">Nov 2025 – Present</span>
+          </div>
+          <ul class="exp-points">
+            <li>Design posters, announcements and digital media for CSI-AITR technical events.</li>
+            <li>Work with the technical team to turn event plans into clear visual communication.</li>
+          </ul>
+          <button type="button" class="exp-link" data-cert="public/certificates/csi-graphic-designer.webp" data-cert-alt="CSI AITR appointment letter">
+            <svg width="14" height="14"><use href="#i-doc" /></svg> View appointment letter
+          </button>
+        </article>
+
+        <article class="exp-card card">
+          <div class="exp-head">
+            <div>
+              <h3 class="exp-role">Graphic Designer</h3>
+              <div class="exp-org">Rotaract Club of Acropolis Professionals</div>
+            </div>
+            <span class="exp-date">Jul 2025 – Jan 2026</span>
+          </div>
+          <ul class="exp-points">
+            <li>Created visual designs for club events, campaigns and community-service initiatives.</li>
+            <li>Produced promotional material that improved the club's visibility and outreach.</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
@@ -247,33 +356,42 @@
     <div class="section-wrap">
       <div class="cert-header-new">
         <div class="cert-header-left">
-          <div class="section-label"><div class="label-dot"></div> Skills</div>
+          <div class="section-label"><span class="label-dot"></span> Skills</div>
           <h2 class="section-title">Tools &amp;<br />Technologies</h2>
-          <p class="section-body" style="margin-bottom: 0;">
-            A curated set of technologies I use to build and secure modern systems at every layer of the stack.
-          </p>
+          <p class="section-body">The languages, frameworks and security tools I work with.</p>
         </div>
         <div class="cert-header-right">
-          <img src="public/graphics/tools.webp" alt="Tools Graphic" width="400" height="300" loading="lazy" />
+          <img src="public/graphics/tools.webp" alt="" width="400" height="300" loading="lazy" />
         </div>
       </div>
+
+      <h3 class="skill-group-title">Security</h3>
       <div class="skills-grid">
-        <div class="skill-chip"><img src="public/logo/python.svg" alt="Python" class="skill-logo" width="22" height="22" /> Python</div>
-        <div class="skill-chip"><img src="public/logo/java.svg" alt="Java" class="skill-logo" width="22" height="22" /> Java</div>
-        <div class="skill-chip"><img src="public/logo/linux.webp" alt="Linux" class="skill-logo" width="22" height="22" /> Linux</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="skill-logo" /> React</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/nextdotjs/ffffff" alt="Next.js" class="skill-logo" /> Next.js</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/burpsuite/FF6633" alt="Burp Suite" class="skill-logo" /> Burp Suite</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/wireshark/1679A7" alt="Wireshark" class="skill-logo" /> Wireshark</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/owasp/ffffff" alt="OWASP" class="skill-logo" /> OWASP</div>
-        <div class="skill-chip"><img src="public/logo/nmap.svg" alt="Nmap" class="skill-logo" width="22" height="22" /> Nmap</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/metasploit/005596" alt="Metasploit" class="skill-logo" /> Metasploit</div>
-        <div class="skill-chip"><img src="public/logo/aws.svg" alt="AWS" class="skill-logo" width="22" height="22" /> AWS</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="skill-logo" /> Docker</div>
-        <div class="skill-chip"><img src="public/logo/terraform.svg" alt="Terraform" class="skill-logo" /> Terraform</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/kalilinux/557C94" alt="Kali Linux" class="skill-logo" /> Kali Linux</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/splunk/ffffff" alt="Splunk" class="skill-logo" /> Splunk</div>
-        <div class="skill-chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL" class="skill-logo" /> PostgreSQL</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/burpsuite/FF6633" alt="" class="skill-logo" width="22" height="22" /> Burp Suite</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/wireshark/1679A7" alt="" class="skill-logo" width="22" height="22" /> Wireshark</div>
+        <div class="skill-chip"><img src="public/logo/nmap.svg" alt="" class="skill-logo" width="22" height="22" /> Nmap</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/metasploit/005596" alt="" class="skill-logo" width="22" height="22" /> Metasploit</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/kalilinux/557C94" alt="" class="skill-logo" width="22" height="22" /> Kali Linux</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/owasp/ffffff" alt="" class="skill-logo invert-light" width="22" height="22" /> OWASP Top 10</div>
+      </div>
+
+      <h3 class="skill-group-title">Development</h3>
+      <div class="skills-grid">
+        <div class="skill-chip"><img src="public/logo/python.svg" alt="" class="skill-logo" width="22" height="22" /> Python</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="" class="skill-logo" width="22" height="22" /> C / C++</div>
+        <div class="skill-chip"><img src="public/logo/java.svg" alt="" class="skill-logo" width="22" height="22" /> Java</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="" class="skill-logo" width="22" height="22" /> React</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/nextdotjs/ffffff" alt="" class="skill-logo invert-light" width="22" height="22" /> Next.js</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" class="skill-logo" width="22" height="22" /> PostgreSQL</div>
+      </div>
+
+      <h3 class="skill-group-title">Cloud &amp; Ops</h3>
+      <div class="skills-grid">
+        <div class="skill-chip"><img src="public/logo/linux.webp" alt="" class="skill-logo" width="22" height="22" /> Linux</div>
+        <div class="skill-chip"><img src="public/logo/aws.svg" alt="" class="skill-logo" width="22" height="22" /> AWS</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="" class="skill-logo" width="22" height="22" /> Docker</div>
+        <div class="skill-chip"><img src="public/logo/terraform.svg" alt="" class="skill-logo" width="22" height="22" /> Terraform</div>
+        <div class="skill-chip"><img src="https://cdn.simpleicons.org/splunk/ffffff" alt="" class="skill-logo invert-light" width="22" height="22" /> Splunk</div>
       </div>
     </div>
   </section>
@@ -283,133 +401,90 @@
   <!-- ═══════════ PROJECTS ═══════════ -->
   <section id="projects">
     <div class="section-wrap">
-      <div class="section-label">Projects</div>
+      <div class="section-label"><span class="label-dot"></span> Projects</div>
       <h2 class="section-title">Selected<br />Work</h2>
-      <p class="section-body">A selection of security research, tooling, and secure development projects.</p>
+      <p class="section-body">Security tooling, systems visualisations and production websites built for real clients.</p>
       <div class="project-grid">
-        <div class="project-card">
+
+        <article class="project-card">
           <div class="project-image">
-            <img src="public/projects/cryptix.webp" alt="Cryptix" loading="lazy" width="800" height="520" />
+            <img src="public/projects/cryptix.webp" alt="Cryptix dashboard with encrypt and decrypt panels" loading="lazy" width="800" height="520" />
           </div>
           <div class="project-content">
-            <div class="project-title">Cryptix — Symmetric File Encryption</div>
-            <div class="project-desc">A secure, client-side file encryption tool for AES, DES, and RC4 symmetric ciphers. Built for the Fundamentals of Cyber Security course.</div>
+            <span class="project-kind">Security tool</span>
+            <h3 class="project-title">Cryptix — Client-side File Encryption</h3>
+            <p class="project-desc">Encrypts and decrypts files entirely in the browser with the WebCrypto API, so nothing is uploaded. Uses AES-256 for real protection, and includes legacy DES and RC4 side by side to show why they're no longer safe.</p>
             <div class="project-tags">
               <span class="project-tag">React</span>
-              <span class="project-tag">Tailwind CSS</span>
               <span class="project-tag">WebCrypto API</span>
+              <span class="project-tag">Tailwind CSS</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/jatinpal548/Cryptix" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-              <a href="https://cryptixxxx.vercel.app/" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                Visit
-              </a>
+              <a href="https://github.com/jatinpal548/Cryptix" target="_blank" rel="noopener" class="project-link"><svg width="16" height="16"><use href="#i-github" /></svg> Code</a>
+              <a href="https://cryptixxxx.vercel.app/" target="_blank" rel="noopener" class="project-link"><svg width="16" height="16"><use href="#i-external" /></svg> Live demo</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card">
+        <article class="project-card">
           <div class="project-image">
-            <img src="public/projects/demand-paging.webp" alt="Demand Paging Simulator" loading="lazy" width="800" height="520" />
+            <img src="public/projects/demand-paging.webp" alt="Demand Paging Visualizer landing page" loading="lazy" width="800" height="520" />
           </div>
           <div class="project-content">
-            <div class="project-title">Demand Paging OS Simulator</div>
-            <div class="project-desc">An interactive web-based simulator visualizing operating system memory management and page replacement algorithms.</div>
+            <span class="project-kind">Systems</span>
+            <h3 class="project-title">Demand Paging OS Simulator</h3>
+            <p class="project-desc">Interactive simulator that steps through page faults, frame allocation and replacement in real time, comparing FIFO, LRU and Optimal algorithms side by side.</p>
             <div class="project-tags">
-              <span class="project-tag">HTML/JS</span>
-              <span class="project-tag">Data Visualization</span>
-              <span class="project-tag">OS Principles</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Data Visualisation</span>
+              <span class="project-tag">Operating Systems</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/jatinpal548/demand_paging" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-              <a href="https://demand-paging-visualizer.vercel.app/" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                Visit
-              </a>
+              <a href="https://github.com/jatinpal548/demand_paging" target="_blank" rel="noopener" class="project-link"><svg width="16" height="16"><use href="#i-github" /></svg> Code</a>
+              <a href="https://demand-paging-visualizer.vercel.app/" target="_blank" rel="noopener" class="project-link"><svg width="16" height="16"><use href="#i-external" /></svg> Live demo</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card">
+        <article class="project-card">
           <div class="project-image">
-            <img src="public/projects/rj-power-solutions.webp" alt="RJ Power Solutions" loading="lazy" width="800" height="520" />
+            <img src="public/projects/rj-power-solutions.webp" alt="RJ Power Solutions website hero" loading="lazy" width="800" height="520" />
           </div>
           <div class="project-content">
-            <div class="project-title">RJ Power Solutions</div>
-            <div class="project-desc">Solar EPC company offering residential, commercial, and industrial solar installation. Free consultation and saving up to 90% on electricity bills.</div>
+            <span class="project-kind">Client project</span>
+            <h3 class="project-title">RJ Power Solutions</h3>
+            <p class="project-desc">Designed and built the website for a solar installation company — service pages, a savings calculator, consultation lead capture and on-page SEO.</p>
             <div class="project-tags">
               <span class="project-tag">Next.js</span>
               <span class="project-tag">Tailwind CSS</span>
               <span class="project-tag">SEO</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/jatinpal548/rjpowersolutions" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-              <a href="https://rj-power-web.vercel.app/" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                Visit
-              </a>
+              <a href="https://github.com/jatinpal548/rjpowersolutions" target="_blank" rel="noopener" class="project-link"><svg width="16" height="16"><use href="#i-github" /></svg> Code</a>
+              <a href="https://rj-power-web.vercel.app/" target="_blank" rel="noopener" class="project-link"><svg width="16" height="16"><use href="#i-external" /></svg> Live site</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card">
+        <article class="project-card">
           <div class="project-image">
-            <img src="public/projects/smb-hungama-band.webp" alt="SMB Hungama Band" loading="lazy" width="800" height="520" />
+            <img src="public/projects/smb-hungama-band.webp" alt="SMB Hungama Band website hero" loading="lazy" width="800" height="520" />
           </div>
           <div class="project-content">
-            <div class="project-title">SMB Hungama Band</div>
-            <div class="project-desc">India's premium live wedding entertainment agency. Flagship Bollywood live band, DJ acts, and more with 500+ electrifying shows.</div>
+            <span class="project-kind">Client project</span>
+            <h3 class="project-title">SMB Hungama Band</h3>
+            <p class="project-desc">Built the live website for a wedding entertainment agency — GSAP-animated hero, artist roster and booking enquiries, responsive across devices.</p>
             <div class="project-tags">
               <span class="project-tag">Next.js</span>
-              <span class="project-tag">GSAP Animations</span>
+              <span class="project-tag">GSAP</span>
               <span class="project-tag">Responsive Design</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/jatinpal548/SMB-Band" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-              <a href="https://smbhungamaband.com/" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                Visit
-              </a>
+              <a href="https://github.com/jatinpal548/SMB-Band" target="_blank" rel="noopener" class="project-link"><svg width="16" height="16"><use href="#i-github" /></svg> Code</a>
+              <a href="https://smbhungamaband.com/" target="_blank" rel="noopener" class="project-link"><svg width="16" height="16"><use href="#i-external" /></svg> Live site</a>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -419,150 +494,116 @@
   <!-- ═══════════ CERTIFICATIONS ═══════════ -->
   <section id="certifications">
     <div class="section-wrap">
-      
       <div class="cert-header-new">
         <div class="cert-header-left">
-          <div class="section-label"><div class="label-dot"></div> CERTIFICATIONS</div>
-          <h2 class="section-title">Credentials that<br />build <span>trust.</span></h2>
-          <p class="section-body" style="margin-bottom: 0;">
-            Industry certifications showcasing my expertise<br />
-            in security, cloud, and development.
-          </p>
+          <div class="section-label"><span class="label-dot"></span> Certifications</div>
+          <h2 class="section-title">Certifications &amp;<br /><span>achievements.</span></h2>
+          <p class="section-body">Job simulations, hackathons and coursework. Click any card to view the certificate.</p>
         </div>
         <div class="cert-header-right">
-          <img src="public/graphics/credentials.webp" alt="Credentials Graphic" width="400" height="300" loading="lazy" />
+          <img src="public/graphics/credentials.webp" alt="" width="400" height="300" loading="lazy" />
         </div>
       </div>
 
       <div class="cert-category-header">
-        <div class="cert-category-title">
-          <span class="category-icon">💼</span> Internships & Experience
-        </div>
-
+        <h3 class="cert-category-title"><span class="category-icon">💼</span> Job Simulations &amp; Internships</h3>
       </div>
       <div class="cert-grid-new">
-        <!-- Card 1 -->
-        <div class="cert-card-new" onclick="openCertModal('public/certificates/jpmorgan-software-engineering.webp')">
+        <div class="cert-card-new" data-cert="public/certificates/jpmorgan-software-engineering.webp" data-cert-alt="J.P. Morgan Software Engineering Job Simulation certificate">
           <div class="cert-preview-new">
-            <img src="public/certificates/jpmorgan-software-engineering.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="120" height="85">
+            <img src="public/certificates/jpmorgan-software-engineering.webp" class="cert-embed-new" alt="" loading="lazy" width="120" height="85">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
             <h4 class="cert-title-new">J.P. Morgan Software Engineering</h4>
             <p class="cert-subtitle-new">Software Engineering Job Simulation</p>
-            <div class="cert-date-new">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Oct 24, 2025
-            </div>
+            <div class="cert-date-new"><svg width="14" height="14"><use href="#i-calendar" /></svg> Oct 24, 2025</div>
             <div class="cert-badge-new"><span class="badge-dot purple"></span> Forage</div>
           </div>
         </div>
-        
-        <!-- Card 2 -->
-        <div class="cert-card-new" onclick="openCertModal('public/certificates/deloitte-cyber-simulation.webp')">
+
+        <div class="cert-card-new" data-cert="public/certificates/deloitte-cyber-simulation.webp" data-cert-alt="Deloitte Cyber Job Simulation certificate">
           <div class="cert-preview-new">
-            <img src="public/certificates/deloitte-cyber-simulation.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="120" height="85">
+            <img src="public/certificates/deloitte-cyber-simulation.webp" class="cert-embed-new" alt="" loading="lazy" width="120" height="85">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
             <h4 class="cert-title-new">Deloitte Cyber Simulation</h4>
             <p class="cert-subtitle-new">Cyber Job Simulation</p>
-            <div class="cert-date-new">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Oct 24, 2025
-            </div>
-            <div class="cert-badge-new"><span class="badge-dot green"></span> Deloitte</div>
+            <div class="cert-date-new"><svg width="14" height="14"><use href="#i-calendar" /></svg> Oct 24, 2025</div>
+            <div class="cert-badge-new"><span class="badge-dot green"></span> Deloitte · Forage</div>
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="cert-card-new" onclick="openCertModal('public/certificates/cognifyz-internship.webp')">
+        <div class="cert-card-new" data-cert="public/certificates/cognifyz-internship.webp" data-cert-alt="Cognifyz internship completion certificate">
           <div class="cert-preview-new">
-            <img src="public/certificates/cognifyz-internship.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="120" height="85">
+            <img src="public/certificates/cognifyz-internship.webp" class="cert-embed-new" alt="" loading="lazy" width="120" height="85">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
-            <h4 class="cert-title-new">Cognifyz Internship</h4>
+            <h4 class="cert-title-new">Cognifyz C/C++ Internship</h4>
             <p class="cert-subtitle-new">Internship Completion Certificate</p>
-            <div class="cert-date-new">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> July 28, 2025
-            </div>
+            <div class="cert-date-new"><svg width="14" height="14"><use href="#i-calendar" /></svg> Nov 26, 2025</div>
             <div class="cert-badge-new"><span class="badge-dot orange"></span> Cognifyz</div>
           </div>
         </div>
       </div>
 
-      <div class="cert-category-header" style="margin-top: 48px;">
-        <div class="cert-category-title">
-          <span class="category-icon">🏆</span> Competitions & Hackathons
-        </div>
-
+      <div class="cert-category-header">
+        <h3 class="cert-category-title"><span class="category-icon">🏆</span> Competitions &amp; Hackathons</h3>
       </div>
       <div class="cert-grid-new two-cols">
-        <!-- Card 4 -->
-        <div class="cert-card-new" onclick="openCertModal('public/certificates/hack-make-2026.webp')">
+        <div class="cert-card-new" data-cert="public/certificates/hack-make-2026.webp" data-cert-alt="Hack and Make 2026 participation certificate">
           <div class="cert-preview-new large">
-            <img src="public/certificates/hack-make-2026.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="160" height="110">
+            <img src="public/certificates/hack-make-2026.webp" class="cert-embed-new" alt="" loading="lazy" width="160" height="110">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
-            <h4 class="cert-title-new">Hack Make 2026</h4>
+            <h4 class="cert-title-new">Hack &amp; Make 2026</h4>
             <p class="cert-subtitle-new">Certificate of Participation</p>
-            <div class="cert-date-new">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Jan 01, 2026
-            </div>
-            <div class="cert-badge-new"><span class="badge-dot purple"></span> Hack Make</div>
+            <div class="cert-date-new"><svg width="14" height="14"><use href="#i-calendar" /></svg> Jan 11, 2026</div>
+            <div class="cert-badge-new"><span class="badge-dot purple"></span> Incubation Masters</div>
           </div>
         </div>
-        <!-- Card 5 -->
-        <div class="cert-card-new" onclick="openCertModal('public/certificates/codespire.webp')">
+        <div class="cert-card-new" data-cert="public/certificates/codespire.webp" data-cert-alt="CODESPIRE certificate of achievement">
           <div class="cert-preview-new large">
-            <img src="public/certificates/codespire.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="160" height="110">
+            <img src="public/certificates/codespire.webp" class="cert-embed-new" alt="" loading="lazy" width="160" height="110">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
             <h4 class="cert-title-new">CODESPIRE</h4>
             <p class="cert-subtitle-new">Certificate of Achievement</p>
-            <div class="cert-date-new">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Dec 15, 2025
-            </div>
+            <div class="cert-date-new"><svg width="14" height="14"><use href="#i-calendar" /></svg> Dec 15, 2025</div>
             <div class="cert-badge-new"><span class="badge-dot purple"></span> Acropolis</div>
           </div>
         </div>
       </div>
 
-      <div class="cert-category-header" style="margin-top: 48px;">
-        <div class="cert-category-title">
-          <span class="category-icon">🎓</span> Courses & Training
-        </div>
-
+      <div class="cert-category-header">
+        <h3 class="cert-category-title"><span class="category-icon">🎓</span> Courses &amp; Training</h3>
       </div>
       <div class="cert-grid-new two-cols">
-        <!-- Card 6 -->
-        <div class="cert-card-new" onclick="openCertModal('public/certificates/nptel-oop.webp')">
+        <div class="cert-card-new" data-cert="public/certificates/nptel-oop.webp" data-cert-alt="NPTEL Fundamentals of Object Oriented Programming certificate">
           <div class="cert-preview-new large">
-            <img src="public/certificates/nptel-oop.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="160" height="110">
+            <img src="public/certificates/nptel-oop.webp" class="cert-embed-new" alt="" loading="lazy" width="160" height="110">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
             <h4 class="cert-title-new">Object Oriented Programming</h4>
             <p class="cert-subtitle-new">NPTEL Certification</p>
-            <div class="cert-date-new">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Jan - Apr 2025
-            </div>
+            <div class="cert-date-new"><svg width="14" height="14"><use href="#i-calendar" /></svg> Jan – Apr 2025</div>
             <div class="cert-badge-new"><span class="badge-dot red"></span> NPTEL</div>
           </div>
         </div>
-        <!-- Card 7 -->
-        <div class="cert-card-new" onclick="openCertModal('public/certificates/nptel-joy-of-computing.webp')">
+        <div class="cert-card-new" data-cert="public/certificates/nptel-joy-of-computing.webp" data-cert-alt="NPTEL The Joy of Computing using Python certificate">
           <div class="cert-preview-new large">
-            <img src="public/certificates/nptel-joy-of-computing.webp" class="cert-embed-new" alt="Certificate Preview" loading="lazy" width="160" height="110">
+            <img src="public/certificates/nptel-joy-of-computing.webp" class="cert-embed-new" alt="" loading="lazy" width="160" height="110">
             <div class="cert-overlay"></div>
           </div>
           <div class="cert-details-new">
             <h4 class="cert-title-new">Joy of Computing (Python)</h4>
             <p class="cert-subtitle-new">NPTEL Certification</p>
-            <div class="cert-date-new">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Jan - Apr 2025
-            </div>
+            <div class="cert-date-new"><svg width="14" height="14"><use href="#i-calendar" /></svg> Jan – Apr 2025</div>
             <div class="cert-badge-new"><span class="badge-dot red"></span> NPTEL</div>
           </div>
         </div>
@@ -575,30 +616,25 @@
   <!-- ═══════════ RESUME ═══════════ -->
   <section id="resume">
     <div class="section-wrap">
-      <div class="section-label"><div class="label-dot"></div> Resume</div>
-      <h2 class="section-title">View My<br />Resume</h2>
-      <p class="section-body">Preview and download my latest resume.</p>
-      
-      <div style="margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 32px;">
-        <div class="resume-preview-card" onclick="openCertModal('public/resume-preview.webp')" style="cursor: pointer; position: relative; width: 100%; max-width: 900px; height: auto; border-radius: 12px; overflow: hidden; background: #fff; transition: transform 0.3s ease; border: 1px solid var(--border);">
-          <img src="public/resume-preview.webp" alt="Resume Preview" style="width: 100%; height: auto; display: block;" loading="lazy" width="1400" height="1980" />
-          <div class="resume-overlay" style="position: absolute; inset: 0; background: transparent; transition: background 0.3s ease; display: flex; align-items: center; justify-content: center;">
-             <div class="view-resume-text" style="background: rgba(0,0,0,0.8); color: white; padding: 12px 24px; border-radius: 100px; font-weight: 500; opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(10px); display: flex; align-items: center; gap: 8px;">
-               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> View Full Resume
-             </div>
+      <div class="resume-layout">
+        <div>
+          <div class="section-label"><span class="label-dot"></span> Resume</div>
+          <h2 class="section-title">The one-page<br />version.</h2>
+          <p class="section-body">Everything above, condensed for recruiters. Preview it here or grab the PDF.</p>
+          <div class="resume-actions">
+            <a href="public/Jatin_Pal_Resume.pdf" download="Jatin_Pal_Resume.pdf" class="cta-btn cta-primary">
+              <svg width="16" height="16"><use href="#i-download" /></svg> Download PDF
+            </a>
+            <a href="public/Jatin_Pal_Resume.pdf" target="_blank" rel="noopener" class="cta-btn cta-secondary">
+              <svg width="16" height="16"><use href="#i-external" /></svg> Open in new tab
+            </a>
           </div>
         </div>
-
-        <div style="display: flex; justify-content: center;">
-          <a href="public/Jatin_Pal_Resume.pdf" download="Jatin_Pal_Resume.pdf" class="cta-btn cta-primary" style="text-decoration: none;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Download Resume
-          </a>
-        </div>
+        <button type="button" class="resume-preview-card" data-cert="public/resume-preview.webp" data-cert-alt="Resume of Jatin Pal" aria-label="Preview resume">
+          <img src="public/resume-preview.webp" alt="" loading="lazy" width="1275" height="1650" />
+          <span class="resume-fade"></span>
+          <span class="view-resume-text">View full resume</span>
+        </button>
       </div>
     </div>
   </section>
@@ -609,17 +645,17 @@
   <section id="contact">
     <div class="section-wrap contact-container">
       <div class="contact-left">
-        <div class="section-label"><div class="label-dot"></div> Contact</div>
+        <div class="section-label"><span class="label-dot"></span> Contact</div>
         <h2 class="section-title">Let's build<br />something <span>secure.</span></h2>
         <div class="contact-divider"></div>
         <p>
-          Open to security consulting, full-stack development,<br />and collaboration on impactful projects.<br /><br />
-          Reach out through any of the channels below.
+          Open to security internships, freelance web projects and collaborations.<br /><br />
+          Email is the fastest way to reach me.
         </p>
       </div>
       <div class="contact-right">
-        <a href="mailto:jatinpal142000@gmail.com" class="contact-card">
-          <div class="contact-card-left">
+        <div class="contact-card contact-card-email">
+          <a href="mailto:jatinpal142000@gmail.com" class="contact-card-left">
             <div class="contact-card-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
             </div>
@@ -627,11 +663,9 @@
               <span class="contact-card-title">Email</span>
               <span class="contact-card-sub">jatinpal142000@gmail.com</span>
             </div>
-          </div>
-          <div class="contact-card-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </div>
-        </a>
+          </a>
+          <button type="button" class="copy-btn" data-copy="jatinpal142000@gmail.com" aria-label="Copy email address">Copy</button>
+        </div>
         <a href="https://www.linkedin.com/in/jatinpal1425" target="_blank" rel="noopener" class="contact-card">
           <div class="contact-card-left">
             <div class="contact-card-icon">
@@ -642,58 +676,33 @@
               <span class="contact-card-sub">linkedin.com/in/jatinpal1425</span>
             </div>
           </div>
-          <div class="contact-card-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </div>
+          <div class="contact-card-arrow"><svg width="20" height="20"><use href="#i-arrow" /></svg></div>
         </a>
-        <a href="https://github.com/jatinpal548/" target="_blank" rel="noopener" class="contact-card">
+        <a href="https://github.com/jatinpal548" target="_blank" rel="noopener" class="contact-card">
           <div class="contact-card-left">
-            <div class="contact-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" /></svg>
-            </div>
+            <div class="contact-card-icon"><svg width="20" height="20"><use href="#i-github" /></svg></div>
             <div class="contact-card-info">
               <span class="contact-card-title">GitHub</span>
               <span class="contact-card-sub">github.com/jatinpal548</span>
             </div>
           </div>
-          <div class="contact-card-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/ft.jatinnn/" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-card-left">
-            <div class="contact-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </div>
-            <div class="contact-card-info">
-              <span class="contact-card-title">Instagram</span>
-              <span class="contact-card-sub">@ft.jatinnn</span>
-            </div>
-          </div>
-          <div class="contact-card-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </div>
+          <div class="contact-card-arrow"><svg width="20" height="20"><use href="#i-arrow" /></svg></div>
         </a>
       </div>
     </div>
   </section>
-
-  <hr class="section-divider" />
-
-  <!-- ═══════════ FOOTER ═══════════ -->
   </main>
+
   <footer>
-    <span class="footer-name">Jatin Pal</span>
-    <span class="footer-copy">© 2026 · Built with precision</span>
+    <span class="footer-name">© 2026 Jatin Pal</span>
+    <a class="footer-copy" href="https://github.com/jatinpal548/jatin-portfolio" target="_blank" rel="noopener">View source on GitHub</a>
   </footer>
 
-  <!-- Certificate Modal -->
-  <div id="cert-modal">
-    <button class="modal-close-btn" onclick="closeCertModal()" aria-label="Close modal">×</button>
-    <img id="cert-modal-iframe" src="" alt="Certificate Viewer" style="object-fit: contain; width: 100%; height: 100%;">
+  <!-- Certificate / resume viewer -->
+  <div id="cert-modal" role="dialog" aria-modal="true" aria-label="Document viewer" hidden>
+    <button class="modal-close-btn" aria-label="Close viewer">×</button>
+    <img id="cert-modal-img" alt="" />
   </div>
-
-  <script src="main.js" defer></script>
 </body>
 
 </html>
