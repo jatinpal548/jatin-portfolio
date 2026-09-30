@@ -43,11 +43,11 @@ function toggleMobileMenu(force) {
     if (persist) store('jp-theme', theme);
 
     var navLogo = document.getElementById('nav-logo-img');
-    if (navLogo) navLogo.src = theme === 'dark' ? 'public/logo/jp-white.webp' : 'public/logo/jp.webp';
+    if (navLogo) navLogo.src = theme === 'dark' ? 'assets/logo/jp-white.webp' : 'assets/logo/jp.webp';
 
     var anthropicCell = document.getElementById('cell-anthropic');
     if (anthropicCell) {
-      var src = theme === 'dark' ? 'public/logo/anthropic-white.webp' : 'public/logo/anthropic.webp';
+      var src = theme === 'dark' ? 'assets/logo/anthropic-white.webp' : 'assets/logo/anthropic.webp';
       anthropicCell.dataset.logo = src;
       var img = anthropicCell.querySelector('.logo-img');
       if (img) img.src = src;
