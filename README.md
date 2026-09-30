@@ -16,7 +16,7 @@ theme-init.js       applies the saved theme before first paint
 404.html / 404.js   custom not-found page
 vercel.json         security headers + caching
 .well-known/        security.txt
-public/
+assets/
   certificates/     certificate images (webp)
   projects/         project screenshots (webp)
   logo/  icons/     logos and skill icons (self-hosted)
@@ -41,10 +41,10 @@ python3 -m http.server 8000
 
 - **New certificate:**
   1. Export it as `.webp`, about 1200px wide.
-  2. Put it in `public/certificates/`, using a lowercase-hyphenated name.
+  2. Put it in `assets/certificates/`, using a lowercase-hyphenated name.
   3. Copy an existing `.cert-card-new` block in `index.html`.
-- **New project:** add a `.webp` screenshot (at least 800px wide) to `public/projects/`, then copy an `article.project-card`.
+- **New project:** add a `.webp` screenshot (at least 800px wide) to `assets/projects/`, then copy an `article.project-card`.
 - **Resume:**
-  1. Replace `public/Jatin_Pal_Resume.pdf`.
-  2. Regenerate `public/resume-preview.webp`, with the phone number removed.
+  1. Replace `assets/Jatin_Pal_Resume.pdf`.
+  2. Regenerate `assets/resume-preview.webp`, with the phone number removed.
   3. Update the experience cards in `index.html` if they changed.
